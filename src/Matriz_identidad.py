@@ -10,10 +10,20 @@
 
 
 
-def esMatrizIdentidad(matrix):
+def esMatrizCuadrada(matrix):
         for i in matrix:                              #Por cada fila en la matriz
               if len(i) != len(matrix):               #Si el numero de filas es ditinto del numero de listas(columnas) de la matriz
                   return False                        #Debuelve Falso, Esto comprueba si la matriz es cuadrada
+        return True                                     #Si no se cumple la condicion anterior, devuelve True, es decir, la matriz es cuadrada
+
+
+def esMatrizIdentidad(matrix):
+    if not esMatrizCuadrada(matrix):                  #Si la matriz no es cuadrada, devuelve Falso
+        return False
+
+
+    else:
+              
         for i in range(len(matrix)):                  #Recorre las filas
             for j in range(len(matrix)):              #Recorre las columnas
                 if i == j and matrix[i][j] != 1:      #Si la posicion de la fila y la coluna es la misma (1,1) y esa posicion es distinta de 1
@@ -40,48 +50,55 @@ def esMatrizIdentidad(matrix):
 
 
 
-    # Casos test:
+  # Casos test:
 
-matrix1 = [[1,0,0,0],
-           [0,1,0,0],
-           [0,0,1,0],
-           [0,0,0,1]]
+matrix1 = [[1, 0, 0, 0],
+           [0, 1, 0, 0],
+           [0, 0, 1, 0],
+           [0, 0, 0, 1]]
+
 assert esMatrizIdentidad(matrix1) == True
 
-matrix2 = [[1,0,0],
-           [0,1,0],
-           [0,0,0]]
+
+matrix2 = [[1, 0, 0],
+           [0, 1, 0],
+           [0, 0, 0]]
 
 assert esMatrizIdentidad(matrix2) == False
 
-matrix3 = [[2,0,0],
-           [0,2,0],
-           [0,0,2]]
+
+matrix3 = [[2, 0, 0],
+           [0, 2, 0],
+           [0, 0, 2]]
 
 assert esMatrizIdentidad(matrix3) == False
 
-matrix6 = [[1,0,0,0],  
-           [0,1,0,2],  
-           [0,0,1,0],  
-           [0,0,0,1]]
+
+matrix6 = [[1, 0, 0, 0],
+           [0, 1, 0, 2],
+           [0, 0, 1, 0],
+           [0, 0, 0, 1]]
 
 assert esMatrizIdentidad(matrix6) == False
+
 
 matrix7 = [[1, -1, 1],
            [0, 1, 0],
            [0, 0, 1]]
+
 assert esMatrizIdentidad(matrix7) == False
 
 
-# casos test que no satisfacen la precondicion de que la matriz sea cuadrada (assert):
+# Casos test que no satisfacen la precondición
+# de que la matriz sea cuadrada:
 
-matrix4 = [[1,0,0,0],
-           [0,1,1,0],
-           [0,0,0,1]]
+matrix4 = [[1, 0, 0, 0],
+           [0, 1, 1, 0],
+           [0, 0, 0, 1]]
 
 assert esMatrizIdentidad(matrix4) == False
 
 
-matrix5 = [[1,0,0,0,0,0,0,0,0]]
+matrix5 = [[1, 0, 0, 0, 0, 0, 0, 0, 0]]
 
 assert esMatrizIdentidad(matrix5) == False

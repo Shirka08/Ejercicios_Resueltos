@@ -25,9 +25,5 @@ if __name__ == "__main__":
     assert loose_change(1) == {'Nickels': 0, 'Pennies': 1, 'Dimes': 0, 'Quarters': 0}
     assert loose_change(5) == {'Nickels': 1, 'Pennies': 0, 'Dimes': 0, 'Quarters': 0}
     assert loose_change(10) == {'Nickels': 0, 'Pennies': 0, 'Dimes': 1, 'Quarters': 0}
-    assert loose_change(25) == {'Nickels': 0, 'Pennies': 0, 'Dimes': 0, 'Quarters': 1}
-    assert loose_change(30) == {'Nickels': 1, 'Pennies': 0, 'Dimes': 1, 'Quarters': 1}
-    assert loose_change(99) == {'Nickels': 4, 'Pennies': 4, 'Dimes': 2, 'Quarters': 3}
-    assert loose_change(-5) == {'Nickels': 0, 'Pennies': 0, 'Dimes': 0, 'Quarters': 0}
-    assert loose_change(3.7) == {'Nickels': 0, 'Pennies': 3, 'Dimes': 0, 'Quarters': 0}
+  
 

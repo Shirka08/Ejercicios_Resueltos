@@ -9,12 +9,18 @@
 
 
 
-def esAntisimetrica(matriz):
+def esMarizCuadrada(matriz):
     for i in matriz:
         if len(i) != len(matriz):
             return False
+    return True
+def esAntisimetrica(matriz):
+    if not esMarizCuadrada(matriz):
+        return False
 
-    for i in range(len(matriz)):
+    else:
+
+     for i in range(len(matriz)):
         for j in range(len(matriz)):
             if matriz[i][j] != -matriz[j][i]:
                 return False
